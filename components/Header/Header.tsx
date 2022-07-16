@@ -7,7 +7,6 @@ import {
   Button,
   Burger,
 } from "@mantine/core";
-import { useBooleanToggle } from "@mantine/hooks";
 
 const HEADER_HEIGHT = 60;
 
@@ -101,10 +100,14 @@ const Header = () => {
           {items}
         </Group>
         <Group>
-          <Button radius="xl" sx={{ height: 30 }}>
+          <Button
+            className="bg-white text-black border border-black hover:bg-gray-500"
+            radius="xl"
+            sx={{ height: 30 }}
+          >
             Login
           </Button>
-          <Button radius="xl" sx={{ height: 30 }}>
+          <Button className="bg-blue-500" radius="xl" sx={{ height: 30 }}>
             Sign up
           </Button>
         </Group>
