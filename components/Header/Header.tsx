@@ -11,13 +11,6 @@ import {
 const HEADER_HEIGHT = 60;
 
 const useStyles = createStyles((theme) => ({
-  inner: {
-    height: HEADER_HEIGHT,
-    display: "flex",
-    justifyContent: "space-between",
-    alignItems: "center",
-  },
-
   links: {
     [theme.fn.smallerThan("sm")]: {
       display: "none",
@@ -84,7 +77,7 @@ const Header = () => {
 
   return (
     <HeaderMantine height={HEADER_HEIGHT} sx={{ borderBottom: 0 }} mb={120}>
-      <Container className={classes.inner} fluid>
+      <Container className="flex justify-between align-items-center h-full" fluid>
         <Group>
           <Burger
             opened={opened}
