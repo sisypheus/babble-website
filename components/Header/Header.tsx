@@ -10,8 +10,6 @@ import {
 } from "@mantine/core";
 import Sidebar from "../Sidebar";
 
-const HEADER_HEIGHT = 60;
-
 const useStyles = createStyles((theme) => ({
   links: {
     [theme.fn.smallerThan("sm")]: {
@@ -72,7 +70,7 @@ const Header = ({ links }: Links) => {
   return (
     <>
       <Sidebar show={opened} setShow={toggleOpened} links={links} />
-      <HeaderMantine height={HEADER_HEIGHT} sx={{ borderBottom: 0 }} mb={120}>
+      <HeaderMantine height={60} sx={{ borderBottom: 0 }} mb={120}>
         <Container
           className="flex justify-between align-items-center h-full"
           fluid
