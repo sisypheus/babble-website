@@ -70,16 +70,14 @@ const Header = ({ links }: Links) => {
         sx={{ borderBottom: 0 }}
         mb={120}
       >
-        <Container
-          className="flex justify-between align-items-center h-full"
-          fluid
-        >
-          <Group>
+        <Container className="flex align-items-center h-full" fluid>
+          <Group className="flex flex-1">
             <Burger
               opened={opened}
               onClick={() => toggleOpened(!opened)}
               className={classes.burger}
               size="sm"
+              color={"white"}
             />
             <Group>
               <Title className="text-white" order={3}>
@@ -90,7 +88,7 @@ const Header = ({ links }: Links) => {
           <Group spacing={5} className={classes.links}>
             {items}
           </Group>
-          <Group>
+          <Group className="flex flex-1 justify-end">
             <Button
               radius="xl"
               size="md"
