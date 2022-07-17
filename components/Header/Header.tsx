@@ -71,7 +71,7 @@ const Header = ({ links }: Links) => {
         mb={120}
       >
         <Container className="flex align-items-center h-full" fluid>
-          <Group className="flex flex-1">
+          <Group className="flex sm:flex-1">
             <Burger
               opened={opened}
               onClick={() => toggleOpened(!opened)}
@@ -93,8 +93,9 @@ const Header = ({ links }: Links) => {
               radius="xl"
               size="md"
               sx={{ height: 30 }}
-              variant="outline"
-              className="text-white border-white"
+              variant="filled"
+              className="border-white bg-white hover:bg-gray-300 hover:border-gray-300 text-black"
+              color={"white"}
             >
               Login
             </Button>
