@@ -6,7 +6,7 @@ const getInitialProps = createGetInitialProps();
 export default class _Document extends Document {
   static async getInitialProps(ctx: any) {
     const initialProps = await Document.getInitialProps(ctx);
-    return { ...initialProps, getInitialProps };
+    return { ...initialProps, ...getInitialProps };
   }
 
   render() {
