@@ -6,7 +6,9 @@ import {
   Group,
   Button,
   Burger,
+  Title,
 } from "@mantine/core";
+import Sidebar from "../Sidebar";
 
 const HEADER_HEIGHT = 60;
 
@@ -49,25 +51,17 @@ const useStyles = createStyles((theme) => ({
   },
 }));
 
-interface HeaderActionProps {
+interface Links {
   links: {
     label: string;
     link: string;
   }[];
 }
 
-const links: HeaderActionProps = {
-  links: [
-    { link: "https://www.mantine.dev", label: "Features" },
-    { link: "https://www.mantine.dev", label: "Pricing" },
-    { link: "https://www.mantine.dev", label: "Github" },
-  ],
-};
-
-const Header = () => {
+const Header = ({ links }: Links) => {
   const { classes } = useStyles();
   const [opened, toggleOpened] = useState(false);
-  const items = links.links.map((link) => {
+  const items = links.map((link) => {
     return (
       <a key={link.label} href={link.link} className={classes.link}>
         {link.label}
@@ -76,36 +70,42 @@ const Header = () => {
   });
 
   return (
-    <HeaderMantine height={HEADER_HEIGHT} sx={{ borderBottom: 0 }} mb={120}>
-      <Container className="flex justify-between align-items-center h-full" fluid>
-        <Group>
-          <Burger
-            opened={opened}
-            onClick={() => toggleOpened(!opened)}
-            className={classes.burger}
-            size="sm"
-          />
+    <>
+      <Sidebar show={opened} setShow={toggleOpened} links={links} />
+      <HeaderMantine height={HEADER_HEIGHT} sx={{ borderBottom: 0 }} mb={120}>
+        <Container
+          className="flex justify-between align-items-center h-full"
+          fluid
+        >
           <Group>
-            <p>Babble</p>
+            <Burger
+              opened={opened}
+              onClick={() => toggleOpened(!opened)}
+              className={classes.burger}
+              size="sm"
+            />
+            <Group>
+              <Title order={3}>Babble</Title>
+            </Group>
           </Group>
-        </Group>
-        <Group spacing={5} className={classes.links}>
-          {items}
-        </Group>
-        <Group>
-          <Button
-            className="bg-white text-black border border-black hover:bg-gray-500"
-            radius="xl"
-            sx={{ height: 30 }}
-          >
-            Login
-          </Button>
-          <Button className="bg-blue-500" radius="xl" sx={{ height: 30 }}>
-            Sign up
-          </Button>
-        </Group>
-      </Container>
-    </HeaderMantine>
+          <Group spacing={5} className={classes.links}>
+            {items}
+          </Group>
+          <Group>
+            <Button
+              className="bg-white text-black border border-black hover:bg-gray-500"
+              radius="xl"
+              sx={{ height: 30 }}
+            >
+              Login
+            </Button>
+            <Button className="bg-blue-500" radius="xl" sx={{ height: 30 }}>
+              Sign up
+            </Button>
+          </Group>
+        </Container>
+      </HeaderMantine>
+    </>
   );
 };
 
