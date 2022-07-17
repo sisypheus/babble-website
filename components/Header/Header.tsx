@@ -29,18 +29,12 @@ const useStyles = createStyles((theme) => ({
     padding: "8px 12px",
     borderRadius: theme.radius.sm,
     textDecoration: "none",
-    color:
-      theme.colorScheme === "dark"
-        ? theme.colors.dark[0]
-        : theme.colors.gray[7],
+    color: theme.white,
     fontSize: theme.fontSizes.sm,
     fontWeight: 500,
 
     "&:hover": {
-      backgroundColor:
-        theme.colorScheme === "dark"
-          ? theme.colors.dark[6]
-          : theme.colors.gray[0],
+      backgroundColor: theme.colors.dark[3],
     },
   },
 
@@ -70,7 +64,12 @@ const Header = ({ links }: Links) => {
   return (
     <>
       <Sidebar show={opened} setShow={toggleOpened} links={links} />
-      <HeaderMantine height={60} sx={{ borderBottom: 0 }} mb={120}>
+      <HeaderMantine
+        className="bg-gray-900 py-2"
+        height={60}
+        sx={{ borderBottom: 0 }}
+        mb={120}
+      >
         <Container
           className="flex justify-between align-items-center h-full"
           fluid
@@ -83,7 +82,9 @@ const Header = ({ links }: Links) => {
               size="sm"
             />
             <Group>
-              <Title order={3}>Babble</Title>
+              <Title className="text-white" order={3}>
+                Babble
+              </Title>
             </Group>
           </Group>
           <Group spacing={5} className={classes.links}>
@@ -92,13 +93,19 @@ const Header = ({ links }: Links) => {
           <Group>
             <Button
               radius="xl"
+              size="md"
               sx={{ height: 30 }}
               variant="outline"
-              color={"dark"}
+              className="text-white border-white"
             >
               Login
             </Button>
-            <Button className="bg-blue-500" radius="xl" sx={{ height: 30 }}>
+            <Button
+              size="md"
+              className="bg-blue-500"
+              radius="xl"
+              sx={{ height: 30 }}
+            >
               Sign up
             </Button>
           </Group>

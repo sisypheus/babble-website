@@ -9,7 +9,7 @@ function Home({ links }: InferGetStaticPropsType<typeof getStaticProps>) {
         <title>Babble | Hassle-free customer chat</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
-      <div>
+      <div className="h-screen bg-gray-900">
         <Header links={links} />
       </div>
     </>
@@ -23,6 +23,7 @@ export const getStaticProps = async () => {
         { link: "https://mantine.dev", label: "Features" },
         { link: "https://mantine.dev", label: "Pricing" },
         { link: "https://mantine.dev", label: "Github" },
+        { link: "https://mantine.dev", label: "Why Babble" },
       ],
     },
   };
