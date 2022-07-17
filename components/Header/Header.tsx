@@ -91,9 +91,10 @@ const Header = ({ links }: Links) => {
           </Group>
           <Group>
             <Button
-              className="bg-white text-black border border-black hover:bg-gray-500"
               radius="xl"
               sx={{ height: 30 }}
+              variant="outline"
+              color={"dark"}
             >
               Login
             </Button>
