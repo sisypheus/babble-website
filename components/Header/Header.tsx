@@ -65,10 +65,9 @@ const Header = ({ links }: Links) => {
     <>
       <Sidebar show={opened} setShow={toggleOpened} links={links} />
       <HeaderMantine
-        className="bg-gray-900 py-2"
+        className="py-2 absolute top-0"
         height={60}
-        sx={{ borderBottom: 0 }}
-        mb={120}
+        sx={{ borderBottom: 0, background: "transparent" }}
       >
         <Container className="flex align-items-center h-full" fluid>
           <Group className="flex sm:flex-1">
@@ -80,7 +79,9 @@ const Header = ({ links }: Links) => {
               color={"white"}
             />
             <Group>
-              <Title className="text-white" order={3}>
+              <Title sx={{
+                color: "white"
+              }} order={3}>
                 Babble
               </Title>
             </Group>
@@ -88,14 +89,13 @@ const Header = ({ links }: Links) => {
           <Group spacing={5} className={classes.links}>
             {items}
           </Group>
-          <Group className="flex flex-1 justify-end">
+          <Group sx={{display: "flex", flex: "1 1 0%", justifyContent: "flex-end"}}>
             <Button
               radius="xl"
               size="md"
               sx={{ height: 30 }}
-              variant="filled"
-              className="border-white bg-white hover:bg-gray-300 hover:border-gray-300 text-black"
-              color={"white"}
+              variant="white"
+              color={"dark"}
             >
               Login
             </Button>
@@ -115,3 +115,4 @@ const Header = ({ links }: Links) => {
 };
 
 export default Header;
+

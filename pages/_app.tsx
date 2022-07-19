@@ -18,14 +18,7 @@ export default function App(props: AppProps) {
 
       <MantineProvider
         withGlobalStyles
-        theme={{
-          colorScheme: "light",
-          colors: {
-            gray: [
-              "#fff",
-            ]
-          }
-        }}
+        withNormalizeCSS
       >
         <Component {...pageProps} />
       </MantineProvider>
