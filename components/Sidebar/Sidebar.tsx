@@ -99,7 +99,7 @@ const Navbar = ({ show, setShow, links }: Props) => {
   if (!show) return null;
 
   return (
-    <NavbarMantine p="md" className="absolute left-0 top-0 w-3/4 h-screen">
+    <NavbarMantine p="md" className="absolute left-0 top-0 w-72 h-screen z-20 bg-gray-50">
       <NavbarMantine.Section grow>
         <Group className={classes.header} position="apart">
           <Title order={3}>Babble</Title>
