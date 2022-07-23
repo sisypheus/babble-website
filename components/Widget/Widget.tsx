@@ -37,8 +37,8 @@ function Widget() {
   return (
     <>
       <div className="w-full hidden sm:flex h-full flex-1 items-center justify-center">
-        <Grid className="max-w-4xl">
-          <Col span={6} className="flex flex-1 items-center">
+        <Grid className="max-w-4xl gap-20">
+          <Col span={6} className="flex flex-1 items-center max-w-[425px]">
             <Group className="items-center gap-3">
               <animated.div style={opacity}>
                 <Title className="text-white h-full items-center flex text-5xl">

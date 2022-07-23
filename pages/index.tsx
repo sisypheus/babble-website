@@ -1,5 +1,6 @@
 import type { InferGetStaticPropsType } from "next";
 import Head from "next/head";
+import Babble from "../components/Babble";
 import Header from "../components/Header";
 import Widget from "../components/Widget";
 
@@ -13,6 +14,10 @@ function Home({ links }: InferGetStaticPropsType<typeof getStaticProps>) {
       <div className="h-screen bg-gray-900">
         <Header links={links} />
         <Widget />
+
+        <div className="h-screen bg-gray-50">
+          <Babble />
+        </div>
       </div>
     </>
   );
@@ -22,10 +27,10 @@ export const getStaticProps = async () => {
   return {
     props: {
       links: [
-        { link: "https://mantine.dev", label: "Features" },
-        { link: "https://mantine.dev", label: "Pricing" },
-        { link: "https://mantine.dev", label: "Github" },
-        { link: "https://mantine.dev", label: "Why Babble" },
+        { link: "#features", label: "Features" },
+        { link: "#pricing", label: "Pricing" },
+        { link: "https://github.com/babble/", label: "Github" },
+        { link: "#why-babble", label: "Why Babble" },
       ],
     },
   };

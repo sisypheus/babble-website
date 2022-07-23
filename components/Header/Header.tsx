@@ -53,7 +53,7 @@ interface Links {
 const Header = ({ links }: Links) => {
   const { classes } = useStyles();
   const [opened, toggleOpened] = useState(false);
-  const items = links.map((link) => {
+  const menuItems = links.map((link) => {
     return (
       <a key={link.label} href={link.link} className={classes.link}>
         {link.label}
@@ -90,7 +90,7 @@ const Header = ({ links }: Links) => {
             </Group>
           </Group>
           <Group spacing={5} className={classes.links}>
-            {items}
+            {menuItems}
           </Group>
           <Group
             sx={{ display: "flex", flex: "1 1 0%", justifyContent: "flex-end" }}
