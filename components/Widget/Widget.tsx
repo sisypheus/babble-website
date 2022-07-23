@@ -17,15 +17,15 @@ const { Col } = Grid;
 
 function Widget() {
   const [styles] = useSpring(() => ({
-    to: { opacity: 1, value: 0 },
-    from: { opacity: 0 },
-    delay: 1000,
+    to: { opacity: 1, translateX: 0 },
+    from: { opacity: 0, translateX: 50 },
+    delay: 500,
   }));
 
   const [opacity] = useSpring(() => ({
     to: { opacity: 1 },
     from: { opacity: 0 },
-    delay: 500,
+    delay: 250,
   }));
 
   return (
@@ -38,17 +38,19 @@ function Widget() {
                 <Title className="text-white h-full items-center flex text-5xl">
                   Hassle free customer chat
                 </Title>
-                <Text size="xl" color={"white"}>
+                <Text size="xl" color={"white"} weight={500}>
                   The easiest way for your customers to get in touch with you,
                   only a single click away.
                 </Text>
-                <Button
-                  size="md"
-                  className="px-3 py-2 mt-2"
-                  rightIcon={<ArrowRight size={"16"} />}
-                >
-                  Get started for free
-                </Button>
+                <a href="https://app.babble.fr/register">
+                  <Button
+                    size="md"
+                    className="px-4 py-2 mt-2"
+                    rightIcon={<ArrowRight size={"16"} />}
+                  >
+                    Get started for free
+                  </Button>
+                </a>
               </animated.div>
             </Group>
           </Col>
@@ -66,10 +68,10 @@ function Widget() {
                   </Title>
                 </Container>
 
-                <Container className="h-[28rem]">test</Container>
+                <Container className="h-[28rem]"></Container>
 
                 <Container className="w-full border-0 border-t border-solid border-gray-200">
-                  <Text size="lg" className="p-2">
+                  <Text size="lg" className="px-2 py-3 text-gray-500">
                     Ask us anything
                   </Text>
                 </Container>
