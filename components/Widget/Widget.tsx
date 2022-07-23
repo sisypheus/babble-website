@@ -28,6 +28,12 @@ function Widget() {
     delay: 250,
   }));
 
+  const [opacityMobile] = useSpring(() => ({
+    to: { opacity: 1 },
+    from: { opacity: 0 },
+    delay: 500,
+  }));
+
   return (
     <>
       <div className="w-full hidden sm:flex h-full flex-1 items-center justify-center">
@@ -82,8 +88,27 @@ function Widget() {
       </div>
 
       {/* mobile version */}
-      <div className="w-full sm:hidden h-full flex flex-1 items-center justify-center">
-        <Title>Hassle free customer chat</Title>
+      <div className="w-full sm:hidden h-full w-full p-2 flex flex-1 items-center justify-center">
+        <Group className="gap-3 w-full">
+          <animated.div style={opacityMobile}>
+            <Title className="text-white h-full items-center flex text-5xl">
+              Hassle free customer chat
+            </Title>
+            <Text size="xl" color={"white"} weight={500}>
+              The easiest way for your customers to get in touch with you, only
+              a single click away.
+            </Text>
+            <a href="https://app.babble.fr/register">
+              <Button
+                size="md"
+                className="px-4 py-2 mt-2"
+                rightIcon={<ArrowRight size={"16"} />}
+              >
+                Get started for free
+              </Button>
+            </a>
+          </animated.div>
+        </Group>
       </div>
     </>
   );
