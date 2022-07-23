@@ -89,7 +89,7 @@ function Widget() {
 
       {/* mobile version */}
       <div className="w-full sm:hidden h-full w-full p-2 flex flex-1 items-center justify-center">
-        <Group className="gap-3 w-full">
+        <Group className="gap-3 w-full text-center">
           <animated.div style={opacityMobile}>
             <Title className="text-white h-full items-center flex text-5xl">
               Hassle free customer chat
