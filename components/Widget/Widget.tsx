@@ -36,9 +36,9 @@ function Widget() {
 
   return (
     <>
-      <div className="w-full hidden sm:flex h-full flex-1 items-center justify-center">
-        <Grid className="max-w-4xl gap-20">
-          <Col span={6} className="flex flex-1 items-center max-w-[425px]">
+      <div className="w-full hidden md:flex h-full flex-1 items-center justify-center">
+        <Grid className="max-w-4xl gap-20 p-6">
+          <Col span={6} className="flex flex-1 items-center max-w-[430px]">
             <Group className="items-center gap-3">
               <animated.div style={opacity}>
                 <Title className="text-white h-full items-center flex text-5xl">
@@ -64,7 +64,7 @@ function Widget() {
             <animated.div style={styles}>
               <Card radius={"md"} className="p-0">
                 <Container className="bg-blue-500 w-full">
-                  <Title order={3} className="p-2 py-4 text-white">
+                  <Title className="p-2 py-4 text-white text-xl lg:text-[22px]">
                     Welcome to the company web chat
                   </Title>
                 </Container>
@@ -88,10 +88,10 @@ function Widget() {
       </div>
 
       {/* mobile version */}
-      <div className="w-full sm:hidden h-full w-full p-2 flex flex-1 items-center justify-center">
-        <Group className="gap-3 w-full text-center">
+      <div className="w-full md:hidden h-full w-full p-2 flex flex-1 items-center justify-center">
+        <Group className="gap-3 w-full text-center p-4">
           <animated.div style={opacityMobile}>
-            <Title className="text-white h-full items-center flex text-5xl">
+            <Title className="text-white text-5xl">
               Hassle free customer chat
             </Title>
             <Text size="xl" color={"white"} weight={500}>
