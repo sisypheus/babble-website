@@ -17,6 +17,9 @@ function Home({ links }: InferGetStaticPropsType<typeof getStaticProps>) {
         <Widget />
 
         <Babble />
+
+        <div className="h-16 bg-slate-50" />
+
         <Features />
       </div>
     </>
