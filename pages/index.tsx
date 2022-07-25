@@ -1,6 +1,7 @@
 import type { InferGetStaticPropsType } from "next";
 import Head from "next/head";
 import Babble from "../components/Babble";
+import Features from "../components/Features";
 import Header from "../components/Header";
 import Widget from "../components/Widget";
 
@@ -15,9 +16,8 @@ function Home({ links }: InferGetStaticPropsType<typeof getStaticProps>) {
         <Header links={links} />
         <Widget />
 
-        <div className="h-screen bg-slate-50">
-          <Babble />
-        </div>
+        <Babble />
+        <Features />
       </div>
     </>
   );
