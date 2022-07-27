@@ -12,7 +12,8 @@ const Babble = () => {
             </Title>
           </Grid.Col>
           <Grid.Col
-            span={6}
+            // span={6}
+            md={6}
             className="flex flex-col items-center justify-center"
           >
             <Group spacing={0}>
@@ -44,7 +45,7 @@ const Babble = () => {
             </Group>
           </Grid.Col>
 
-          <Grid.Col span={6} className="flex items-center justify-center">
+          <Grid.Col md={6} className="flex items-center justify-center">
             <Image
               src="/customer.svg"
               className="shadow rounded-xl bg-gray-200 px-4"
@@ -53,10 +54,6 @@ const Babble = () => {
             />
           </Grid.Col>
         </Grid>
-
-        {/* mobile version */}
-        <div></div>
-        {/*end mobile version*/}
 
         <div className="bg-slate-50 flex flex-col items-center justify-center mt-16">
           <div className="max-w-6xl p-3">
