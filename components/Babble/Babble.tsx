@@ -12,7 +12,6 @@ const Babble = () => {
             </Title>
           </Grid.Col>
           <Grid.Col
-            // span={6}
             md={6}
             className="flex flex-col items-center justify-center"
           >
@@ -55,7 +54,7 @@ const Babble = () => {
           </Grid.Col>
         </Grid>
 
-        <div className="bg-slate-50 flex flex-col items-center justify-center mt-16">
+        <div className="bg-slate-50 flex flex-col items-center justify-center lg:mt-16">
           <div className="max-w-6xl p-3">
             <Title className="text-center">
               <span className="text-blue-500">Babble</span> offers an easy and
