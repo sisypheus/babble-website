@@ -46,7 +46,7 @@ const Babble = () => {
 
           <Grid.Col md={6} className="flex items-center justify-center">
             <Image
-              src="/customer.svg"
+              src="/assets/customer.svg"
               className="shadow rounded-xl bg-gray-200 px-4"
               width={600}
               height={400}
@@ -61,7 +61,7 @@ const Babble = () => {
               lightweight solution to instantly improve the way your customers
               interact with your business.
             </Title>
-            <Text className="text-center text-2xl">
+            <Text className="text-center text-2xl mt-1">
               You only have to paste a code snippet in a single file, and we can
               do the rest.
             </Text>

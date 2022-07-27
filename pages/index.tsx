@@ -18,7 +18,7 @@ function Home({ links }: InferGetStaticPropsType<typeof getStaticProps>) {
 
         <Babble />
 
-        <div className="h-16 bg-slate-50" />
+        <div className="md:h-32 h-12 bg-slate-50" />
 
         <Features />
       </div>
