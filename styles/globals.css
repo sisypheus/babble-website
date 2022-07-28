@@ -7,3 +7,9 @@
     scroll-behavior: smooth;
   }
 }
+
+@layer components {
+  .bg-custom {
+    background: radial-gradient(130% 80% at bottom, #f8fafc 50%, #111827 50.1%);
+  }
+}
