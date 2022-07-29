@@ -19,11 +19,11 @@ function Home({ links }: InferGetStaticPropsType<typeof getStaticProps>) {
 
         <Babble />
 
-        <div className="h-32 bg-slate-50" />
+        <div className="md:h-32 h-64 bg-slate-50" />
 
         <Features />
 
-        <div className="h-32 bg-slate-50" />
+        <div className="md:h-32 h-64 bg-slate-50" />
 
         <Pricing/>
 

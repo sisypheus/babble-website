@@ -124,7 +124,7 @@ const Features = () => {
     <div id="features" className="bg-slate-50 min-h-screen h-full">
       <Container
         className={
-          classes.wrapper + " flex flex-col items-center justify-center h-full"
+          classes.wrapper + " flex flex-col items-center justify-center h-full py-8"
         }
       >
         <Text className={classes.supTitle}>FEATURES</Text>
