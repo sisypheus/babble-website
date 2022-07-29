@@ -1,35 +1,52 @@
+import { Button, Title, Text } from "@mantine/core";
 import Checked from "./Checked";
 import Unchecked from "./Unchecked";
 
 type Props = {
   price: number;
+  name: string;
+  highlight: boolean;
+  description: string;
+  features: Feature[];
 };
 
-const PriceCard = () => {
+type Feature = {
+  name: string;
+  available?: boolean;
+  limit?: number;
+};
+
+const PriceCard = ({
+  price,
+  name,
+  highlight,
+  description,
+  features,
+}: Props) => {
   return (
-    <div>
-      <div className="shadow-lg rounded-2xl w-64 bg-white p-4">
-        <p className="text-gray-800 text-xl font-medium mb-4">Entreprise</p>
-        <p className="text-gray-900 text-3xl font-bold">
-          $0
-          <span className="text-gray-300 text-sm">/ month</span>
-        </p>
-        <p className="text-gray-600   text-xs mt-4">
-          For most businesses that want to optimize web queries.
-        </p>
-        <ul className="text-sm text-gray-600  w-full mt-6 mb-6">
-          <li className="mb-3 flex items-center ">
-            <Checked />
-            All illimited components
-          </li>
-        </ul>
-        <button
-          type="button"
-          className="py-2 px-4  bg-indigo-600 hover:bg-indigo-700 focus:ring-indigo-500 focus:ring-offset-indigo-200 text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-lg "
+    <div className="shadow-lg rounded-lg bg-white flex flex-col items-center justify-content-center p-8 aspect-[9/16]">
+      <Title order={3} className="text-center">
+        Entreprise
+      </Title>
+      <Button className="py-2 px-4  bg-indigo-600 hover:bg-indigo-700 focus:ring-indigo-500 focus:ring-offset-indigo-200 text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-lg ">
+        <a
+          className="no-underline text-white"
+          href="https://app.babble.fr/register"
         >
-          Choose plan
-        </button>
-      </div>
+          <Text>Try for free</Text>
+        </a>
+      </Button>
+      <Text className="text-gray-900 text-3xl font-bold">
+        {price}
+        <span className="text-gray-400 text-base">/ month</span>
+      </Text>
+      {description}
+      <Text className="text-gray-700 mt-4 text-center"></Text>
+      <ul className="text-sm text-gray-800  w-full mt-6 mb-6 p-0">
+        {features.map((feature: Feature) => (
+          <li key={feature.name} className="mb-3 p-0 flex items-center "></li>
+        ))}
+      </ul>
     </div>
   );
 };

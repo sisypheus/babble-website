@@ -25,8 +25,7 @@ function Home({ links }: InferGetStaticPropsType<typeof getStaticProps>) {
 
         <div className="md:h-32 h-64 bg-slate-50" />
 
-        <Pricing/>
-
+        <Pricing />
       </div>
     </>
   );

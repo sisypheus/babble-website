@@ -8,7 +8,11 @@ module.exports = {
     "./components/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      screens: {
+        sm: "576px",
+      },
+    },
   },
   plugins: [],
 };

@@ -1,10 +1,12 @@
-const Checked = () => {
+type Props = {
+  className?: string
+}
+
+const Checked = ({className}: Props) => {
   return (
     <svg
-      className="h-6 w-6 mr-2"
+      className={className}
       xmlns="http://www.w3.org/2000/svg"
-      width="6"
-      height="6"
       stroke="currentColor"
       fill="#10b981"
       viewBox="0 0 1792 1792"

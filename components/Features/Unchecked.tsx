@@ -1,10 +1,12 @@
-const Unchecked = () => {
+type Props = {
+  className?: string
+}
+
+const Unchecked = ({className}: Props) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="6"
-      height="6"
-      className="h-6 w-6 mr-2"
+      className={className}
       fill="red"
       viewBox="0 0 1792 1792"
     >
