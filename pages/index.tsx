@@ -3,7 +3,7 @@ import Head from "next/head";
 import Babble from "../components/Babble";
 import Features from "../components/Features";
 import Header from "../components/Header";
-import Pricing from "../components/Pricing/Pricing";
+import Pricing from "../components/Pricing";
 import Widget from "../components/Widget";
 
 function Home({ links }: InferGetStaticPropsType<typeof getStaticProps>) {

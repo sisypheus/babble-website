@@ -93,10 +93,6 @@ interface FeatureItem {
   description: string;
 }
 
-interface FeaturesImagesProps {
-  data: FeatureItem[];
-}
-
 const Features = () => {
   const { classes } = useStyles();
 
