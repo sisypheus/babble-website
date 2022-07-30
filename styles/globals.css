@@ -13,6 +13,5 @@
     background: radial-gradient(120% 80% at bottom, #f8fafc 50%, #111827 50.1%);
     background-size: cover;
     min-height: 100vh;
-    height: 100%;
   }
 }

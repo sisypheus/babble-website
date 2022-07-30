@@ -104,7 +104,7 @@ const Features = () => {
         size={120}
         radius="md"
       >
-        <Image src={"/assets/" + item.icon} />
+        <Image src={"/assets/" + item.icon} alt=""/>
       </ThemeIcon>
 
       <div>

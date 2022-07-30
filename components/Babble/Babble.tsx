@@ -50,6 +50,7 @@ const Babble = () => {
               className="shadow rounded-xl bg-gray-200 px-4"
               width={600}
               height={400}
+              alt=""
             />
           </Grid.Col>
         </Grid>
