@@ -2,6 +2,7 @@ import type { InferGetStaticPropsType } from "next";
 import Head from "next/head";
 import Babble from "../components/Babble";
 import Features from "../components/Features";
+import Footer from "../components/Footer/Footer";
 import Header from "../components/Header";
 import Pricing from "../components/Pricing";
 import Widget from "../components/Widget";
@@ -32,6 +33,7 @@ function Home({
       </Head>
 
       <Header links={links} />
+
       <Widget />
 
       <Babble />
@@ -43,6 +45,8 @@ function Home({
       <div className="md:h-0 h-64 bg-slate-50" />
 
       <Pricing plans={plans} />
+
+      <Footer links={links} />
     </>
   );
 }
