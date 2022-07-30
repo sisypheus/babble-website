@@ -36,11 +36,11 @@ function Home({
 
         <Babble />
 
-        <div className="md:h-32 h-64 bg-slate-50" />
+        <div className="md:h-4 h-64 bg-slate-50" />
 
         <Features />
 
-        <div className="md:h-32 h-64 bg-slate-50" />
+        <div className="md:h-4 h-64 bg-slate-50" />
 
         <Pricing plans={plans} />
       </div>
@@ -53,8 +53,8 @@ export const getStaticProps = async () => {
     props: {
       links: [
         { link: "#why-babble", label: "Why Babble" },
-        { link: "#pricing", label: "Pricing" },
         { link: "#features", label: "Features" },
+        { link: "#pricing", label: "Pricing" },
         { link: "https://github.com/babble/", label: "Github" },
       ],
       plans: [

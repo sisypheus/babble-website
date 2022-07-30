@@ -17,26 +17,26 @@ const Babble = () => {
           >
             <Group spacing={0}>
               <Blockquote className="p-2" cite="FORBES" icon={null}>
-                <span className="text-sky-500 font-semibold">
+                <span className="text-blue-500 font-semibold">
                   80% increase in revenue
                 </span>{" "}
                 for businesses that focus on increasing customer experience
               </Blockquote>
               <Blockquote className="p-2" cite="SUPER OFFICE" icon={null}>
-                <span className="text-sky-500 font-semibold">
+                <span className="text-blue-500 font-semibold">
                   9/10 customers
                 </span>{" "}
                 are willing to pay ~15% for a better customer support
               </Blockquote>
               <Blockquote className="p-2" cite="SALESFORCE" icon={null}>
-                <span className="text-sky-500 font-semibold">
+                <span className="text-blue-500 font-semibold">
                   7/10 customers prefer
                 </span>{" "}
                 web chatting over other mean of communication methods for
                 talking to businesses
               </Blockquote>
               <Blockquote className="p-2" cite="LUMOA" icon={null}>
-                <span className="text-sky-500 font-semibold">
+                <span className="text-blue-500 font-semibold">
                   9/10 customers have moved
                 </span>{" "}
                 to competition following a poor customer experience

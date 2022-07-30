@@ -51,7 +51,7 @@ function Widget() {
                 <a href="https://app.babble.fr/register">
                   <Button
                     size="md"
-                    className="px-4 py-2 mt-2"
+                    className="px-4 py-2 mt-2 bg-blue-500"
                     rightIcon={<ArrowRight size={"16"} />}
                   >
                     Get started for free
@@ -101,7 +101,7 @@ function Widget() {
             <a href="https://app.babble.fr/register">
               <Button
                 size="md"
-                className="px-4 py-2 mt-2"
+                className="px-4 py-2 mt-2 bg-blue-500"
                 rightIcon={<ArrowRight size={"16"} />}
               >
                 Get started for free

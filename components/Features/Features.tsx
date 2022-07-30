@@ -49,10 +49,10 @@ const useStyles = createStyles((theme) => ({
   },
 
   highlight: {
-    backgroundColor: theme.fn.variant({
-      variant: "light",
-      color: theme.primaryColor,
-    }).background,
+    // backgroundColor: theme.fn.variant({
+    //   variant: "light",
+    //   color: theme.primaryColor,
+    // }).background,
     padding: 5,
     paddingTop: 0,
     borderRadius: theme.radius.sm,
@@ -104,7 +104,7 @@ const Features = () => {
         size={120}
         radius="md"
       >
-        <Image src={"/assets/" + item.icon} alt=""/>
+        <Image src={"/assets/" + item.icon} alt="" />
       </ThemeIcon>
 
       <div>
@@ -120,14 +120,18 @@ const Features = () => {
     <div id="features" className="bg-slate-50 min-h-screen h-full">
       <Container
         className={
-          classes.wrapper + " flex flex-col items-center justify-center h-full py-8"
+          classes.wrapper +
+          " flex flex-col items-center justify-center h-full py-8"
         }
       >
-        <Text className={classes.supTitle}>FEATURES</Text>
+        <Title className="text-blue-500 tracking-[0.5px]">FEATURES</Title>
 
         <Title className={classes.title} order={1}>
-          Babble <span className={classes.highlight}>the</span> tool for
-          customer support
+          Babble{" "}
+          <span className={classes.highlight + " bg-blue-500 text-white"}>
+            the
+          </span>{" "}
+          tool for customer support
         </Title>
 
         <Container size={660} p={0}>
@@ -145,7 +149,7 @@ const Features = () => {
           {items}
         </SimpleGrid>
         <Text className="mt-4 font-semibold">
-          ... and <span className="text-sky-500">more</span> to come!
+          ... and <span className="text-blue-500">more</span> to come!
         </Text>
       </Container>
     </div>
