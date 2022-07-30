@@ -1,6 +1,6 @@
 import { Grid, Title } from "@mantine/core";
 import PriceCard from "../Features/PriceCard";
-import { Plan} from "../../pages/index";
+import { Plan } from "../../pages/index";
 
 const { Col } = Grid;
 
@@ -27,7 +27,7 @@ function Pricing({ plans }: { plans: Plan[] }) {
             {plans.map((plan: Plan, index: number) => (
               <Col
                 xs={10}
-                sm={8}
+                sm={10}
                 md={6}
                 lg={5}
                 className="flex align-center justify-center"
