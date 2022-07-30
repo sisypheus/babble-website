@@ -54,7 +54,10 @@ export const getStaticProps = async () => {
         { link: "#why-babble", label: "Why Babble" },
         { link: "#features", label: "Features" },
         { link: "#pricing", label: "Pricing" },
-        { link: "https://github.com/babble/", label: "Github" },
+        {
+          link: "https://github.com/sisypheus/babble-website",
+          label: "Github",
+        },
       ],
       plans: [
         {
