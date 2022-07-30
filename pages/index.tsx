@@ -30,20 +30,19 @@ function Home({
         <title>Babble | Hassle-free customer chat</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
-      {/* <div className="h-screen bg-gray-900"> */}
-        <Header links={links} />
-        <Widget />
 
-        <Babble />
+      <Header links={links} />
+      <Widget />
 
-        <div className="md:h-4 h-64 bg-slate-50" />
+      <Babble />
 
-        <Features />
+      <div className="md:h-0 h-64 bg-slate-50" />
 
-        <div className="md:h-4 h-64 bg-slate-50" />
+      <Features />
 
-        <Pricing plans={plans} />
-      {/* </div> */}
+      <div className="md:h-0 h-64 bg-slate-50" />
+
+      <Pricing plans={plans} />
     </>
   );
 }

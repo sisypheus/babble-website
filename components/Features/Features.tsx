@@ -9,11 +9,6 @@ import {
 } from "@mantine/core";
 
 const useStyles = createStyles((theme) => ({
-  wrapper: {
-    paddingTop: 80,
-    paddingBottom: 50,
-  },
-
   item: {
     display: "flex",
   },
@@ -49,10 +44,6 @@ const useStyles = createStyles((theme) => ({
   },
 
   highlight: {
-    // backgroundColor: theme.fn.variant({
-    //   variant: "light",
-    //   color: theme.primaryColor,
-    // }).background,
     padding: 5,
     paddingTop: 0,
     borderRadius: theme.radius.sm,
@@ -117,13 +108,11 @@ const Features = () => {
   ));
 
   return (
-    <div id="features" className="bg-slate-50 min-h-screen h-full">
-      <Container
-        className={
-          classes.wrapper +
-          " flex flex-col items-center justify-center h-full py-8"
-        }
-      >
+    <div
+      id="features"
+      className="bg-slate-50 min-h-screen flex flex-col items-center justify-center"
+    >
+      <Container className="flex flex-col h-full items-center justify-center py-8">
         <Title className="text-blue-500 tracking-[0.5px]">FEATURES</Title>
 
         <Title className={classes.title} order={1}>
