@@ -30,7 +30,7 @@ function Home({
         <title>Babble | Hassle-free customer chat</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
-      <div className="h-screen bg-gray-900">
+      {/* <div className="h-screen bg-gray-900"> */}
         <Header links={links} />
         <Widget />
 
@@ -43,7 +43,7 @@ function Home({
         <div className="md:h-4 h-64 bg-slate-50" />
 
         <Pricing plans={plans} />
-      </div>
+      {/* </div> */}
     </>
   );
 }

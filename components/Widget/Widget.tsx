@@ -2,9 +2,6 @@ import {
   Card,
   Title,
   Container,
-  Input,
-  InputWrapper,
-  TextInput,
   Text,
   Grid,
   Group,
@@ -36,8 +33,8 @@ function Widget() {
 
   return (
     <>
-      <div className="w-full hidden md:flex h-full flex-1 items-center justify-center">
-        <Grid className="max-w-4xl gap-20 p-6">
+      <div className="w-full hidden md:flex h-full bg-gray-900 min-h-screen flex-1 items-center justify-center">
+        <Grid className="max-w-4xl gap-20 p-6 py-16">
           <Col span={6} className="flex flex-1 items-center max-w-[430px]">
             <Group className="items-center gap-3">
               <animated.div style={opacity}>
