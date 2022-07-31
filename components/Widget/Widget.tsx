@@ -9,10 +9,65 @@ import {
 } from "@mantine/core";
 import { useSpring, animated } from "react-spring";
 import { ArrowRight } from "tabler-icons-react";
+import { ReactElement, useEffect, useRef, useState } from "react";
+import Typed from "typed.js";
 
 const { Col } = Grid;
 
+function Message({
+  message,
+  user,
+}: {
+  message: string;
+  user: "COMPANY" | "USER";
+}) {
+  return user === "COMPANY" ? (
+    <div className="flex justify-start mr-auto w-1/2 my-1">
+      <Text className="flex items-center px-3 py-1 bg-gray-300 text-black rounded font-medium">
+        {message}
+      </Text>
+    </div>
+  ) : (
+    <div className="flex justify-end ml-auto w-1/2 my-1">
+      <Text className="flex items-center px-3 py-1 bg-blue-500 text-white rounded font-medium">
+        {message}
+      </Text>
+    </div>
+  );
+}
+
 function Widget() {
+  const typedRef = useRef<any>(null);
+  const [firstMessage] = useSpring(() => ({
+    from: { opacity: 0, translateY: 50 },
+    to: { opacity: 1, translateY: 0 },
+    delay: 5000,
+  }));
+
+  const [secondMessage] = useSpring(() => ({
+    from: { opacity: 0, translateY: 50 },
+    to: { opacity: 1, translateY: 0 },
+    delay: 7000,
+  }));
+
+  const [thirdMessage] = useSpring(() => ({
+    from: { opacity: 0, translateY: 50 },
+    to: { opacity: 1, translateY: 0 },
+    delay: 11750,
+  }));
+
+  const [fourthMessage] = useSpring(() => ({
+    from: { opacity: 0, translateY: 50 },
+    to: { opacity: 1, translateY: 0 },
+    delay: 14000,
+  }));
+
+  const [messages, setMessages] = useState<ReactElement[]>([
+    <animated.div style={firstMessage}>
+      <Message message="Hello, I need help with my order" user="USER" />
+    </animated.div>,
+  ]);
+
   const [styles] = useSpring(() => ({
     to: { opacity: 1, translateX: 0 },
     from: { opacity: 0, translateX: 50 },
@@ -30,6 +85,63 @@ function Widget() {
     from: { opacity: 0 },
     delay: 500,
   }));
+
+  useEffect(() => {
+    let typed = new Typed(typedRef.current, {
+      strings: ["Hello, I need help with my order", ""],
+      startDelay: 2000,
+      typeSpeed: 50,
+      cursorChar: "",
+      fadeOut: true,
+    });
+
+    setTimeout(() => {
+      setMessages([
+        <animated.div style={thirdMessage}>
+          <Message message="How many colors are available ?" user="USER" />
+        </animated.div>,
+        <animated.div style={secondMessage}>
+          <Message message="Hi, how may I help you ?" user="COMPANY" />
+        </animated.div>,
+        <animated.div style={firstMessage}>
+          <Message message="Hello, I need help with my order" user="USER" />
+        </animated.div>,
+      ]);
+    }, 11750);
+
+    setTimeout(() => {
+      setMessages([
+        <animated.div style={secondMessage}>
+          <Message message="Hi, how may I help you ?" user="COMPANY" />
+        </animated.div>,
+        ...messages,
+      ]);
+      // @ts-ignore
+      typed.strings = ["How many colors are available ?", ""];
+      typed.reset();
+    }, 7000);
+
+    setTimeout(() => {
+      setMessages([
+        <animated.div style={fourthMessage}>
+          <Message message="There are 3 available colors, blue, green and red" user="COMPANY" />
+        </animated.div>,
+        <animated.div style={thirdMessage}>
+          <Message message="How many colors are available ?" user="USER" />
+        </animated.div>,
+        <animated.div style={secondMessage}>
+          <Message message="Hi, how may I help you ?" user="COMPANY" />
+        </animated.div>,
+        <animated.div style={firstMessage}>
+          <Message message="Hello, I need help with my order" user="USER" />
+        </animated.div>,
+      ]);
+    }, 13000);
+
+    return () => {
+      typed.destroy();
+    };
+  }, []);
 
   return (
     <>
@@ -57,10 +169,11 @@ function Widget() {
               </animated.div>
             </Group>
           </Col>
+
           <Col span={6} className="w-full">
             <animated.div style={styles}>
-              <Card radius={"md"} className="p-0">
-                <Container className="bg-blue-500 w-full">
+              <Card radius={"md"} className="p-0 overflow-visible">
+                <Container className="bg-blue-500 w-full rounded-t">
                   <Title className="p-2 py-4 text-white text-xl lg:text-[22px]">
                     Welcome to the company web chat
                   </Title>
@@ -71,12 +184,20 @@ function Widget() {
                   </Title>
                 </Container>
 
-                <Container className="h-[28rem]"></Container>
+                <Container className="h-[28rem] px-6 flex flex-col-reverse">
+                  {messages.map(
+                    (message: React.ReactElement, index: number) => (
+                      <div key={index}>{message}</div>
+                    )
+                  )}
+                </Container>
 
-                <Container className="w-full border-0 border-t border-solid border-gray-200">
-                  <Text size="lg" className="px-2 py-3 text-gray-500">
-                    Ask us anything
-                  </Text>
+                <Container className="w-full border-0 border-t border-solid border-gray-200 min-h-[52.9px]">
+                  <Text
+                    size="lg"
+                    className="px-2 py-3 text-gray-700"
+                    ref={typedRef}
+                  />
                 </Container>
               </Card>
             </animated.div>
