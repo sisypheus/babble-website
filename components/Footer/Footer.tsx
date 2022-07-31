@@ -1,4 +1,5 @@
 import { createStyles, Container, Group, Anchor, Title } from "@mantine/core";
+import Image from "next/image";
 
 const useStyles = createStyles((theme) => ({
   inner: {
@@ -44,10 +45,16 @@ function Footer({ links }: FooterProps) {
       <div className="bg-gray-900 lg:bg-slate-50 border-solid border-0 border-t border-gray-600 lg:border-gray-200">
         <Container className={classes.inner}>
           <div className="flex items-center space-x-2 cursor-default">
-            <img
-              className="p-2 h-8 w-8 rounded-md bg-blue-500"
-              src="/assets/logo.svg"
-            />
+            <div className="p-1 bg-blue-500 rounded">
+              <div className="rounded h-6 w-6 bg-blue-500 relative">
+                <Image
+                  src="/assets/logo.svg"
+                  alt="Babble logo"
+                  layout="fill"
+                  objectFit="contain"
+                />
+              </div>
+            </div>
             <Title order={4} className="font-medium lg:text-black text-white">
               Babble
             </Title>

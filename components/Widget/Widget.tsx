@@ -63,7 +63,7 @@ function Widget() {
   }));
 
   const [messages, setMessages] = useState<ReactElement[]>([
-    <animated.div style={firstMessage}>
+    <animated.div key="first" style={firstMessage}>
       <Message message="Hello, I need help with my order" user="USER" />
     </animated.div>,
   ]);
@@ -97,13 +97,13 @@ function Widget() {
 
     setTimeout(() => {
       setMessages([
-        <animated.div style={thirdMessage}>
+        <animated.div key={"third"} style={thirdMessage}>
           <Message message="How many colors are available ?" user="USER" />
         </animated.div>,
-        <animated.div style={secondMessage}>
+        <animated.div key={"second"} style={secondMessage}>
           <Message message="Hi, how may I help you ?" user="COMPANY" />
         </animated.div>,
-        <animated.div style={firstMessage}>
+        <animated.div key={"first"} style={firstMessage}>
           <Message message="Hello, I need help with my order" user="USER" />
         </animated.div>,
       ]);
@@ -111,7 +111,7 @@ function Widget() {
 
     setTimeout(() => {
       setMessages([
-        <animated.div style={secondMessage}>
+        <animated.div key="second" style={secondMessage}>
           <Message message="Hi, how may I help you ?" user="COMPANY" />
         </animated.div>,
         ...messages,
@@ -123,20 +123,23 @@ function Widget() {
 
     setTimeout(() => {
       setMessages([
-        <animated.div style={fourthMessage}>
-          <Message message="There are 3 available colors, blue, green and red" user="COMPANY" />
+        <animated.div key={"fourth"} style={fourthMessage}>
+          <Message
+            message="There are 3 available colors, blue, green and red"
+            user="COMPANY"
+          />
         </animated.div>,
-        <animated.div style={thirdMessage}>
+        <animated.div key={"third"} style={thirdMessage}>
           <Message message="How many colors are available ?" user="USER" />
         </animated.div>,
-        <animated.div style={secondMessage}>
+        <animated.div key={"second"} style={secondMessage}>
           <Message message="Hi, how may I help you ?" user="COMPANY" />
         </animated.div>,
-        <animated.div style={firstMessage}>
+        <animated.div key={"first"} style={firstMessage}>
           <Message message="Hello, I need help with my order" user="USER" />
         </animated.div>,
       ]);
-    }, 13000);
+    }, 14000);
 
     return () => {
       typed.destroy();
@@ -187,7 +190,7 @@ function Widget() {
                 <Container className="h-[28rem] px-6 flex flex-col-reverse">
                   {messages.map(
                     (message: React.ReactElement, index: number) => (
-                      <div key={index}>{message}</div>
+                      <>{message}</>
                     )
                   )}
                 </Container>
