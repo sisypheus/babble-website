@@ -190,7 +190,7 @@ function Widget() {
                 <Container className="h-[28rem] px-6 flex flex-col-reverse">
                   {messages.map(
                     (message: React.ReactElement, index: number) => (
-                      <>{message}</>
+                      <div key={index}>{message}</div>
                     )
                   )}
                 </Container>
