@@ -22,13 +22,13 @@ function Message({
   user: "COMPANY" | "USER";
 }) {
   return user === "COMPANY" ? (
-    <div className="flex justify-start mr-auto w-1/2 my-1">
+    <div className="flex justify-start mr-auto w-3/4 my-1">
       <Text className="flex items-center px-3 py-1 bg-gray-300 text-black rounded font-medium">
         {message}
       </Text>
     </div>
   ) : (
-    <div className="flex justify-end ml-auto w-1/2 my-1">
+    <div className="flex justify-end ml-auto w-3/4 my-1">
       <Text className="flex items-center px-3 py-1 bg-blue-500 text-white rounded font-medium">
         {message}
       </Text>
