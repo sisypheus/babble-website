@@ -7,6 +7,8 @@ import {
   SimpleGrid,
   createStyles,
 } from "@mantine/core";
+import { useInView } from "react-intersection-observer";
+import { useSpring, animated } from "react-spring";
 
 const useStyles = createStyles((theme) => ({
   item: {
@@ -86,6 +88,18 @@ interface FeatureItem {
 
 const Features = () => {
   const { classes } = useStyles();
+  const options = {
+    treshold: 0.3,
+    triggerOnce: true,
+  };
+  const { ref, entry } = useInView(options);
+  const animate = useSpring({
+    from: { opacity: 0 },
+    delay: 500,
+    to: {
+      opacity: entry?.isIntersecting ? 1 : 0,
+    },
+  });
 
   const items = data.map((item) => (
     <div className={classes.item + " flex items-center"} key={item.title}>
@@ -111,36 +125,40 @@ const Features = () => {
     <div
       id="features"
       className="bg-slate-50 min-h-screen flex flex-col items-center justify-center"
+      ref={ref}
     >
-      <Container className="flex flex-col h-full items-center justify-center py-8">
-        <Title className="text-blue-500 tracking-[0.5px]">FEATURES</Title>
+      <animated.div style={animate}>
+        <Container className="flex flex-col h-full items-center justify-center py-8">
+          <Title className="text-blue-500 tracking-[0.5px]">FEATURES</Title>
 
-        <Title className={classes.title} order={1}>
-          Babble{" "}
-          <span className={classes.highlight + " bg-blue-500 text-white"}>
-            the
-          </span>{" "}
-          tool for customer support
-        </Title>
+          <Title className={classes.title} order={1}>
+            Babble{" "}
+            <span className={classes.highlight + " bg-blue-500 text-white"}>
+              the
+            </span>{" "}
+            tool for customer support
+          </Title>
 
-        <Container size={660} p={0}>
-          <Text color="dimmed" className={classes.description + " text-lg"}>
-            An easy to use, Lightweight, and customizable customer support tool
+          <Container size={660} p={0}>
+            <Text color="dimmed" className={classes.description + " text-lg"}>
+              An easy to use, Lightweight, and customizable customer support
+              tool
+            </Text>
+          </Container>
+
+          <SimpleGrid
+            cols={2}
+            spacing={50}
+            breakpoints={[{ maxWidth: 550, cols: 1, spacing: 40 }]}
+            style={{ marginTop: 30 }}
+          >
+            {items}
+          </SimpleGrid>
+          <Text className="mt-4 font-semibold">
+            ... and <span className="text-blue-500">more</span> to come!
           </Text>
         </Container>
-
-        <SimpleGrid
-          cols={2}
-          spacing={50}
-          breakpoints={[{ maxWidth: 550, cols: 1, spacing: 40 }]}
-          style={{ marginTop: 30 }}
-        >
-          {items}
-        </SimpleGrid>
-        <Text className="mt-4 font-semibold">
-          ... and <span className="text-blue-500">more</span> to come!
-        </Text>
-      </Container>
+      </animated.div>
     </div>
   );
 };
