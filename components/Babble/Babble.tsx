@@ -18,26 +18,26 @@ const Babble = () => {
 
   const leftCol = useSpring({
     config: { duration: 400 },
-    from: { opacity: 0, translateX: -200 },
+    from: { opacity: 0, translateX: -0 },
     to: {
       opacity: entryLeft?.isIntersecting ? 1 : 0,
-      translateX: entryLeft?.isIntersecting ? 0 : -200,
+      translateX: entryLeft?.isIntersecting ? 0 : 0,
     },
   });
 
   const rightCol = useSpring({
     config: { duration: 400 },
-    from: { opacity: 0, translateX: 200 },
+    from: { opacity: 0, translateX: 0 },
     delay: 500,
     to: {
       opacity: entryRight?.isIntersecting ? 1 : 0,
-      translateX: entryRight?.isIntersecting ? 0 : 200,
+      translateX: entryRight?.isIntersecting ? 0 : 0,
     },
   });
 
   const lastPart = useSpring({
     config: { duration: 400 },
-    from: { opacity: 0},
+    from: { opacity: 0 },
     delay: 500,
     to: {
       opacity: entryLast?.isIntersecting ? 1 : 0,
@@ -49,7 +49,7 @@ const Babble = () => {
       <div id="why-babble" className="bg-slate-50">
         <Grid gutter={32} className="w-full max-w-6xl m-auto py-8">
           <Grid.Col span={12} className="flex items-end justify-center">
-            <Title>
+            <Title className="text-center">
               A few reasons to use <span className="text-blue-500">Babble</span>
             </Title>
           </Grid.Col>

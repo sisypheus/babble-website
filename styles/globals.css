@@ -6,6 +6,10 @@
   html {
     background-color: #0f172a;
     scroll-behavior: smooth;
+    overflow-x: hidden;
+  }
+  body {
+    overflow-x: hidden;
   }
 }
 
