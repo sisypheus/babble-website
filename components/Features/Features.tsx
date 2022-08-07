@@ -89,7 +89,7 @@ interface FeatureItem {
 const Features = () => {
   const { classes } = useStyles();
   const options = {
-    treshold: 0.3,
+    treshold: 0.2,
     triggerOnce: true,
   };
   const { ref, entry } = useInView(options);
@@ -125,10 +125,12 @@ const Features = () => {
     <div
       id="features"
       className="bg-slate-50 min-h-screen flex flex-col items-center justify-center"
-      ref={ref}
     >
       <animated.div style={animate}>
-        <Container className="flex flex-col h-full items-center justify-center py-8">
+        <Container
+          ref={ref}
+          className="flex flex-col h-full items-center justify-center py-8"
+        >
           <Title className="text-blue-500 tracking-[0.5px]">FEATURES</Title>
 
           <Title className={classes.title} order={1}>
