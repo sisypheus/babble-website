@@ -95,23 +95,27 @@ const Header = ({ links }: Links) => {
           <Group
             sx={{ display: "flex", flex: "1 1 0%", justifyContent: "flex-end" }}
           >
-            <Button
-              radius="xl"
-              size="md"
-              sx={{ height: 30 }}
-              variant="white"
-              color={"dark"}
-            >
-              Login
-            </Button>
-            <Button
-              size="md"
-              className="bg-blue-500"
-              radius="xl"
-              sx={{ height: 30 }}
-            >
-              Sign up
-            </Button>
+            <a href="https://app.babble.fr/login">
+              <Button
+                radius="xl"
+                size="md"
+                sx={{ height: 30 }}
+                variant="white"
+                color={"dark"}
+              >
+                Login
+              </Button>
+            </a>
+            <a href="https://app.babble.fr/register">
+              <Button
+                size="md"
+                className="bg-blue-500"
+                radius="xl"
+                sx={{ height: 30 }}
+              >
+                Sign up
+              </Button>
+            </a>
           </Group>
         </Container>
       </HeaderMantine>

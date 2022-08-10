@@ -11,6 +11,7 @@ import { useSpring, animated } from "react-spring";
 import { ArrowRight } from "tabler-icons-react";
 import { ReactElement, useEffect, useRef, useState } from "react";
 import Typed from "typed.js";
+import Link from "next/link";
 
 const { Col } = Grid;
 
