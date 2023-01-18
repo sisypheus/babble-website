@@ -30,6 +30,7 @@ function Home({
       <Head>
         <title>Babble | Hassle-free customer chat</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        <meta name="google-site-verification" content="7PmrzgkXmQ4bavOT5Vzhocp0bHZBVciw4UrzRmSImNQ" />
       </Head>
 
       <Header links={links} />
