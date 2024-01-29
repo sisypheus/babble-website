@@ -161,7 +161,7 @@ function Widget() {
                   The easiest way for your customers to get in touch with you,
                   only a single click away.
                 </Text>
-                <a href="https://app.babble.fr/register">
+                <a href="https://app.babbles.fr/register">
                   <Button
                     size="md"
                     className="px-4 py-2 mt-2 bg-blue-500"
@@ -220,7 +220,7 @@ function Widget() {
               The easiest way for your customers to get in touch with you, only
               a single click away.
             </Text>
-            <a href="https://app.babble.fr/register">
+            <a href="https://app.babbles.fr/register">
               <Button
                 size="md"
                 className="px-4 py-2 mt-2 bg-blue-500"

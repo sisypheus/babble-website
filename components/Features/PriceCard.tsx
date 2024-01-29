@@ -5,7 +5,7 @@ import Unchecked from "./Unchecked";
 
 const PriceCard = ({ price, name, highlight, description, features }: Plan) => {
   const redirectToApp = () => {
-    window.location.href = "https://app.babble.fr/register";
+    window.location.href = "https://app.babbles.fr/register";
   };
 
   return highlight ? (

@@ -95,7 +95,7 @@ const Header = ({ links }: Links) => {
           <Group
             sx={{ display: "flex", flex: "1 1 0%", justifyContent: "flex-end" }}
           >
-            <a href="https://app.babble.fr/login">
+            <a href="https://app.babbles.fr/login">
               <Button
                 radius="xl"
                 size="md"
@@ -106,7 +106,7 @@ const Header = ({ links }: Links) => {
                 Login
               </Button>
             </a>
-            <a href="https://app.babble.fr/register">
+            <a href="https://app.babbles.fr/register">
               <Button
                 size="md"
                 className="bg-blue-500"

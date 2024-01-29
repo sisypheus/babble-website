@@ -134,7 +134,7 @@ const Features = () => {
           <Title className="text-blue-500 tracking-[0.5px]">FEATURES</Title>
 
           <Title className={classes.title} order={1}>
-            Babble{" "}
+            Babble is{" "}
             <span className={classes.highlight + " bg-blue-500 text-white"}>
               the
             </span>{" "}
