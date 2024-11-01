@@ -54,9 +54,6 @@ function Pricing({ plans }: { plans: Plan[] }) {
           className="flex flex-col items-center justify-center mb-8"
         >
           <Title order={1} className="text-white">
-            The pricing
-          </Title>
-          <Title order={2} className="text-white">
             A pricing that suits <span className="text-blue-500">your</span>{" "}
             needs
           </Title>

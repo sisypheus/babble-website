@@ -5,7 +5,6 @@ import Features from "../components/Features";
 import Footer from "../components/Footer/Footer";
 import Header from "../components/Header";
 import Pricing from "../components/Pricing";
-import Process from "../components/Process";
 import Widget from "../components/Widget";
 
 export type Plan = {
@@ -43,12 +42,6 @@ function Home({
 
       <Babble />
 
-      <div className="md:h-0 h-64 bg-slate-50" />
-
-      <Process />
-
-      <div className="bg-slate-50" />
-
       <Features />
 
       <div className="md:h-0 h-64 bg-slate-50" />
@@ -66,7 +59,6 @@ export const getStaticProps = async () => {
       links: [
         { link: "#why-babble", label: "Why Babble" },
         { link: "#features", label: "Features" },
-        { link: "#process", label: "How it works" },
         { link: "#pricing", label: "Pricing" },
         {
           link: "https://github.com/sisypheus/babble-website",
